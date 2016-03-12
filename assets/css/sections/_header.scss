@@ -9,21 +9,9 @@
 	z-index: 999;
 	&.change-color {
 		background-color: rgba($white,.95);
-		/*.main-nav, .logo {
-			a {
-				color: $black;
-			}
-		}
-		.main-nav {
-			a {
-				&:before {
-					background-color: $black;
-				}
-			}
-		}*/
 	}
 	.logo {
-		margin:0;
+		margin: 0;
 	    font-size: 30px;
     	line-height: 30px;
 		@include raleway(900);

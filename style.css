@@ -215,9 +215,6 @@ html {
   font-size: 1em;
   line-height: 1.4; }
 
-body {
-  overflow-x: hidden; }
-
 /*
  * A better looking default horizontal rule
  */
@@ -4860,19 +4857,7 @@ blockquote p {
   top: 0;
   z-index: 999; }
   .main-header.change-color {
-    background-color: rgba(255, 255, 255, 0.95);
-    /*.main-nav, .logo {
-    	a {
-    		color: $black;
-    	}
-    }
-    .main-nav {
-    	a {
-    		&:before {
-    			background-color: $black;
-    		}
-    	}
-    }*/ }
+    background-color: rgba(255, 255, 255, 0.95); }
   .main-header .logo {
     margin: 0;
     font-size: 30px;
@@ -5164,6 +5149,9 @@ blockquote p {
       .home h2 {
         font-size: 34px;
         line-height: 45px; } }
+
+.home-content-container {
+  overflow-x: hidden; }
 
 .instagram {
   height: 50vh;
