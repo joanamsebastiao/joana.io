@@ -4926,6 +4926,9 @@ blockquote p {
     font-style: bold; }
     .secondary-footer span i {
       margin-right: 10px; }
+    @media screen and (max-width: 640px) {
+      .secondary-footer span {
+        font-size: 13px; } }
   .secondary-footer .clock {
     margin-right: 15px; }
 
@@ -5150,8 +5153,9 @@ blockquote p {
         font-size: 34px;
         line-height: 45px; } }
 
-.home-content-container {
-  overflow-x: hidden; }
+.content-container {
+  overflow-x: hidden;
+  position: relative; }
 
 .instagram {
   height: 50vh;

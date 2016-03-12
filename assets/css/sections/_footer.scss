@@ -20,6 +20,9 @@
 		i {
 			margin-right: 10px;
 		}
+		@include s {
+			font-size: 13px;
+		}
 	}
 	.clock {
 		margin-right: 15px;
