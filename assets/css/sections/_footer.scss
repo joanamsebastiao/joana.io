@@ -1,0 +1,27 @@
+// ================================================
+// 					SECONDARY FOOTER
+// ================================================
+.secondary-footer {
+	padding: 10px 0;
+	background-color: $blue-2;
+	/*&.change-color {
+		span {
+			color: $black;
+        	color: rgba(37,38,42,.75);
+		}
+	}*/
+	span {
+		color: $white;
+		/*color: $white;*/
+		line-height:30px;
+		vertical-align:middle;
+    	font-size: 15px;
+		@include raleway(700);
+		i {
+			margin-right: 10px;
+		}
+	}
+	.clock {
+		margin-right: 15px;
+	}
+}

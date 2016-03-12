@@ -1,0 +1,14 @@
+form {
+	label { }
+}
+input, textarea {
+	&:disabled, &:readonly { }
+	&:focus { }
+	&:hover { }
+}
+input[type="text"] { }
+input[type="password"] { }
+input[type="email"] { }
+input[type="submit"] { }
+textarea { }
+select { }

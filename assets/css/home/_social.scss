@@ -1,0 +1,52 @@
+.social {
+	padding: 75px 0;
+	text-align: center;
+	@include m {
+		padding: 50px 0;
+	}
+	li {
+		display: inline-block;
+		&:first-child {
+			a {
+				margin-left: 0;
+			}
+		}
+		&:last-child {
+			a {
+				margin-right: 0;
+			}
+		}
+	}
+	a {
+		margin: 0 10px;
+		color: $blue-2;
+		display: block;
+		width: 70px;
+		height: 70px;
+		border: solid 3px transparent;
+		font-size: 35px;
+		line-height: 70px;
+		&:hover {
+			border: solid 3px $blue-2;
+		}
+		@include m {
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+		}
+		@include s {
+		    width: 35px;
+		    height: 35px;
+		    line-height: 34px;
+		    font-size: 18px;
+		    margin: 0 5px;
+		}
+	}
+	p {
+		margin-top: 25px;
+		font-size: 14px;
+		color: $blue-2;
+		@include raleway;
+	}
+	* { @include transition(all .1s ease-in-out); }
+}

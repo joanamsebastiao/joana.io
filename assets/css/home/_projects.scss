@@ -1,0 +1,222 @@
+.projects {
+	position: relative;
+	padding: 0 0 70px 0;
+	.project-item {
+		display: block;
+		widh: 100%;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 30px;
+		height: 300px;
+		@include s {
+			margin-bottom: 15px;
+		}
+		&:hover {
+			.view-project {
+				width: 100%;
+			}
+		}
+		&.gosurf {
+			background-color: $water-green-2;
+			label, .text {
+				color: $blue-2;
+			}
+		}
+		&.decojovem {
+			.mask {
+				background-color: rgba($blue-2, .8);
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+			}
+			.view-project {
+				background-color: rgba($water-green-2, .95);
+				i {
+					color: $white;
+				}
+			}
+		}
+		&.arn {
+			background-color: rgba($yellow-2, .5);
+			a, label, .text {
+				color: $blue-2;
+			}
+			.view-project {
+				background-color: rgba($blue-2, .95);
+				i {
+					color: $white;
+				}
+			}
+		}
+		&.gide {
+			background-color: $old-pink-2;
+			.text, label, a {
+				color: $pink-2;
+			}
+			.view-project {
+				background-color: rgba($pink-2, .95);
+				i {
+					color: $white;
+				}
+			}
+		}
+		&.galo {
+			border: solid 10px $blue-2;
+			.text, label, a {
+				color: $pink-2;
+			}
+			.view-project {
+				background-color: rgba($yellow-2, .95);
+				i {
+					color: $white;
+				}
+			}
+		}
+		&.dod {
+			.mask {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				background-color: rgba($yellow-2, .9);
+			}
+			.text, label, a {
+				color: $blue-2;
+			}
+			.view-project {
+				background-color: rgba($blue-2, .95);
+				i {
+					color: $white;
+				}
+			}
+		}
+	}
+	.view-project {
+		width: 0;
+		height: 50px;
+		position: absolute;
+		bottom: 0;
+		z-index: 100;
+		i {
+			position: absolute;
+			right: 15px;
+			font-size: 30px;
+			line-height: 50px;
+		}
+	}
+	figure {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		background-position: center !important;
+	}
+	.title-container {
+		p {
+			margin: 0;
+			padding: 100px 25px;
+			font-size: 70px;
+			line-height: 70px;
+			color: $pink;
+			@include raleway;
+			i {
+				margin-left: 50px;
+			    top: -2px;
+			    font-size: 50px;
+			    position: relative;
+
+			}
+		}
+		.letters {
+			color: $pink-2;
+			line-height: 100px;
+			font-size: 100px;
+			position: absolute;
+			@include raleway(700);
+			&.w {
+	            top: -85px;
+    			left: 30px;
+			}
+			&.o {
+				top: 0px;
+    			right: 30px;
+    			z-index: 2;
+    			@include m {
+    				top: -55px;
+				    right: -14px;
+				    z-index: 1;
+    			}
+			}
+			&.r {
+			    bottom: -15px;
+			    right: 275px;
+			    z-index: -1;
+			}
+			&.k {
+			    bottom: 41px;
+			    right: 40px;
+			    z-index: 2;
+			    @include m {
+			    	right: 15px;
+   					z-index: -1;
+			    }
+			}
+		}
+	}
+	.title {
+		display: none;
+	}
+	.text {
+		padding: 25px 50px 25px 25px;
+		width: 100%;
+		height: 100%;
+		color: $white;
+		position: relative;
+		z-index: 3;
+		top: 0;
+		position: absolute;
+		text-decoration: none;
+		h3 {
+			margin:0;
+			font-size: 40px;
+			line-height: 40px;
+			@include raleway(700);
+		}
+		p {
+			font-size: 14px;
+			@include raleway;
+		}
+	}
+	label {
+		position: absolute;
+		right: 20px;
+		bottom: 15px;
+		font-size: 14px;
+		color: $white;
+		z-index: 10;
+		@include raleway;
+		a {
+			position: relative;
+			color: $white;
+			text-decoration: none;
+			@include raleway(700);
+			&:before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 2px;
+				background-color: $white;
+				bottom: -3px;
+				opacity: 0;
+			}
+			&:hover {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	* { @include transition(all .8s ease-in-out); }
+}

@@ -1,0 +1,150 @@
+// ========================================
+// Author: Tiago Franco
+// Website: http://tiagofranco.com
+// ========================================
+
+// ========================================
+// GRID VARIABLES
+// Costumize yours, based on your projects needs
+// ========================================
+$cols : 12;
+$gap  : 15px;
+
+// ========================================
+// BREAKPOINTS
+// Costumize yours
+// I like to abstract "mobile", "mobile landscape", "tablet", etc, into xxs, xs, s, m...
+// As more and more devices and form-factors join the market defining something with a simplistic becomes 
+// ========================================
+$xl   : 1330px;
+$l    : 1000px;
+$m    : 800px;
+$s    : 640px;
+$xs   : 480px;
+$xxs  : 320px;
+
+// ========================================
+// NOW INSIDE AN ARRAY/MAP
+// For itteration, later on
+// ========================================
+$breakpoints: (
+	xl   : $xl,
+	l    : $l,
+	m    : $m,
+	s    : $s,
+	xs   : $xs,
+	xxs  : $xxs
+);
+.row {
+	@include clearfix;
+	max-width: map-get($breakpoints, xl);
+	margin: 0 auto;
+
+	//Reverse grid floating direction
+	&.reverse {
+		*[class*="col-"] {
+			float: right;
+		}
+	}
+}
+@mixin col {
+	display: block;
+	float: left;
+	min-height: 1px;
+	padding-left: $gap;
+	padding-right: $gap;
+}
+
+// ========================================
+// GENERAL, VIEWPORT WIDTH INDEPENDENT
+// ========================================
+@for $i from 1 through $cols {
+	.col-#{$i} {
+		@include col;
+		width: (100%/$cols*$i);
+	}
+	.push-#{$i} {
+		margin-left: (100%/$cols*$i);
+	}
+	.pull-#{$i} {
+		margin-left: -(100%/$cols*$i);
+	}
+}
+
+// ========================================
+// GENERATE BREAKPOINTS, PUSHES AND PULLS
+// ========================================
+@each $point, $resolution in $breakpoints {
+	@media screen and (max-width: #{$resolution}){
+		@for $i from 1 through $cols {
+			.#{$point}-col-#{$i} {
+				@include col;
+				width: (100%/$cols*$i);
+			}
+			.#{$point}-push-#{$i} {
+				margin-left: (100%/$cols*$i);
+			}
+			.#{$point}-pull-#{$i} {
+				margin-left: -(100%/$cols*$i);
+			}
+			.#{$point}-alpha {
+				padding-left: 0;
+			}
+			.#{$point}-omega {
+				padding-right: 0;
+			}
+			.#{$point}-no-pad {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.#{$point}-pad {
+				padding-left: $gap;
+				padding-right: $gap;
+			}
+			.#{$point}-no-push,
+			.#{$point}-no-pull {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@mixin media-query ( $point ){
+	@media screen and (max-width: $point) {
+		@content;
+	}
+}
+
+// ========================================
+// GENERATE BREAKPOINT MIXINS
+// ========================================
+@mixin xl {
+	@media screen and (max-width: $xl) {
+		@content;
+	}
+}
+@mixin l {
+	@media screen and (max-width: $l) {
+		@content;
+	}
+}
+@mixin m {
+	@media screen and (max-width: $m) {
+		@content;
+	}
+}
+@mixin s {
+	@media screen and (max-width: $s) {
+		@content;
+	}
+}
+@mixin xs {
+	@media screen and (max-width: $xs) {
+		@content;
+	}
+}
+@mixin xxs {
+	@media screen and (max-width: $xxs) {
+		@content;
+	}
+}

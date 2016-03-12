@@ -1,0 +1,100 @@
+// GENERAL AND PROJECT SPECIFIC MIXINS
+
+// Webkit only
+// Recommended only on situations where there's high contrast between text and background
+@mixin font-smooth {
+	-webkit-font-smoothing: antialiased;
+}
+
+// Optimize kerning and turn on type ligatures
+// Use carefuly - it can negatively impact page load when applied to large blocks of text
+// More on this here: http://aestheticallyloyal.com/public/optimize-legibility
+@mixin optimizeLegibility {
+	text-rendering: optimizeLegibility;
+}
+
+// Hiding text method, by Paul Irish and other community leaders
+@mixin hide-text {
+	font: 0/0 serif;
+	text-shadow: none;
+	color: transparent;
+}
+
+@mixin noise($color) {
+	background: $color url('../images/noise.png');
+}
+
+// Opacity compatible with IE >= 8
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); 
+}
+
+// Quick transparent black/white colors
+@function black($opacity: 1){
+	@return rgba(0, 0, 0, $opacity);
+}
+@function white($opacity: 1){
+	@return rgba(255, 255, 255, $opacity);
+}
+
+// Quickly convert pixels do ems
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+
+// Change box model to border-box
+@mixin border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// Vertically center any object within its container. Works in IE9 and up.
+// From chopsticks boilerplate
+@mixin vertical-center {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// Easily truncate text with an ellipsis with a single mixin.
+// Requires element to be block or inline-block level.
+// From Bootstrap
+@mixin text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin border ($side, $size: 1px, $color: #000000, $type: solid) {
+	#{$side}: $size $type $color;
+}
+
+@mixin bg($type, $src, $ext: 'png') {
+	@if $type == "image" {
+	   background-image: url('../images/#{$src}.#{$ext}');
+	} @else if $type == "color" {
+		background-color: $src;
+	}
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+// REGULAR 400 / 400italix
+// BOLD 700 / 700italic
+// ULTRA BOLD 900
+@mixin raleway ($weight : 400, $style : bold ) {
+    font-family: 'Raleway', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}

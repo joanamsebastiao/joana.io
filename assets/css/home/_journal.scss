@@ -1,0 +1,46 @@
+.journal {
+	text-align: center;
+	background-color: rgba($yellow-2, .5);
+	padding: 75px 0;
+	font-size: 30px;
+	color: $water-green-2;
+	@include raleway(900);
+	@include l {
+		font-size: 25px;
+		padding: 50px 0;
+	}
+	p {
+		margin: 0;
+		@include l {
+			margin: 10px 0;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: $water-green-2;
+		&:hover {
+			color:$pink-2;
+		}
+	}
+	.fa-angle-double-right {
+		margin-right: 15px;
+	}
+	.fa-angle-double-left {
+		margin-left: 15px;
+	}
+	&.on-about {
+		color: $pink-2;
+		background-color: $old-pink-2;
+		a {
+			color: $pink-2;
+			&:hover {
+				color: $water-green-2;
+			}
+		}
+	}
+	i {
+		@include s {
+			font-size: 22px;
+		}
+	}
+}

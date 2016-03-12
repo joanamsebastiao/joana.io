@@ -1,0 +1,36 @@
+.home {
+	/*background-color: $grey-light;*/
+    background-color: $white;
+    /*min-height: 100vh;*/
+    position: relative;
+    padding: 150px 0 100px 0;
+    @include m {
+        padding-bottom: 150px;
+    }
+    h2 {
+        margin: 0;
+        font-size: 70px;
+        line-height: 90px;
+        position: relative;
+        /*color: $white;*/
+        color: $blue-2;
+        @include raleway(900);
+        span {
+            color: $water-green-2;
+            /*color: $black;*/
+            /*color: rgba(37,38,42,.75);*/
+        }
+        @include l {
+            font-size: 50px;
+            line-height: 70px;
+        }
+        @include m {
+            font-size: 45px;
+            line-height: 60px;
+        }
+        @include s {
+            font-size: 34px;
+            line-height: 45px;
+        }
+    }
+}

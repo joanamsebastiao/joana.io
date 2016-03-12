@@ -1,0 +1,169 @@
+.about {
+    padding: 100px 0 75px 0;
+    figure {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0;
+        background-size: 110% 110% !important;
+        background-position: center !important;
+        i {
+            position: absolute;
+            z-index: 1;
+            @include xl {
+                font-size: 14px;
+            }
+            &.left, &.left-2, &.left-3, &.left-4 {
+                color: $blue-2;
+            }
+            &.right, &.right-2, &.right-3, &.right-4 {
+                color: $pink-2;
+            }
+            &.left {
+                top: 43px;
+                left: 50px;
+                @include xl {
+                    top: 36px;
+                    left: 42px;
+                }
+            }
+            &.right {
+                top: 43px;
+                left: 75px;
+                @include xl {
+                    top: 36px;
+                    left: 65px;
+                }
+            }
+            &.left-2 {
+                top: 43px;
+                right: 74px;
+                @include xl {
+                    top: 36px;
+                    right: 64px;
+                }
+            }
+            &.right-2 {
+                top: 43px;
+                right: 48px;
+                @include xl {
+                    top: 36px;
+                    right: 41px;
+                }
+            }
+            &.left-3 {
+                top: 192px;
+                left: 52px;
+                @include xl {
+                    top: 166px;
+                    left: 44px;
+                }
+            }
+            &.right-3 {
+                top: 192px;
+                left: 76px;
+                @include xl {
+                    top: 166px;
+                    left: 66px;
+                }
+            }
+            &.left-4 {
+                top: 192px;
+                right: 47px;
+                @include xl {
+                    top: 165px;
+                    right: 40px;
+                }
+            }
+            &.right-4 {
+                top: 192px;
+                right: 69px;
+                @include xl {
+                    top: 165px;
+                    right: 59px;
+                }
+            }
+        }
+        @include xl {
+            width: 260px;
+            height: 260px;
+        }
+    }
+    h2 {
+        position: relative;
+        color: $blue-2;
+        font-size: 25px;
+        @include raleway(900);
+        &:before {
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: $water-green-2;
+            bottom: -6px;
+        }
+        @include l {
+            margin-top: 0;
+        }
+        @include s{
+            margin-top: 15px;
+        }
+    }
+    p {
+        font-size: 14px;
+        color: $blue-2;
+        @include raleway;
+    }
+    h3 {
+        position: relative;
+        color: $blue-2;
+        font-size: 20px;
+        @include raleway(900);
+        &:before {
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: $water-green-2;
+            bottom: -6px;
+        }
+        &.no-margin-top {
+            margin-top: 0;
+            @include l {
+                margin-top: 30px;
+            }
+            @include s {
+                margin-top: auto;
+            }
+        }
+    }
+    .company-container {
+        margin-bottom: 20px;
+    }
+    .company {
+        color: $water-green-2;
+        font-size: 15px;
+        text-decoration: none; 
+        @include raleway(700);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p.company {
+        margin-bottom: 0;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .role {
+        font-size: 15px;
+        margin: 0;
+        @include raleway(700);
+    }
+    date {
+        font-size: 14px;
+        font-style: italic;
+        color: $blue-2;
+        @include raleway;
+    }
+}

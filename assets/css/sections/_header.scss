@@ -1,0 +1,39 @@
+// =================================================
+//                      HEADER
+// =================================================
+.main-header {
+	padding: 20px 0;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+	&.change-color {
+		background-color: rgba($white,.95);
+		/*.main-nav, .logo {
+			a {
+				color: $black;
+			}
+		}
+		.main-nav {
+			a {
+				&:before {
+					background-color: $black;
+				}
+			}
+		}*/
+	}
+	.logo {
+		margin:0;
+	    font-size: 30px;
+    	line-height: 30px;
+		@include raleway(900);
+		a {
+			/*color: $white;*/
+			color: $blue-2;
+			text-decoration: none;
+			&:hover {
+				color: $water-green-2;
+			}
+		}
+	}
+}

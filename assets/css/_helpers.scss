@@ -1,0 +1,31 @@
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.alignleft { 
+	float: left;
+} 
+
+.alignright { 
+	float: right;
+}
+
+.pad {
+	padding-left: $gap;
+	padding-right: $gap;
+}
+.no-pad {
+	padding-left: 0;
+	padding-right: 0;
+}
+.alpha { padding-left: 0; }
+.omega { padding-right: 0; }
+
+.align-right {
+	text-align: right;
+}
